@@ -1,0 +1,50 @@
+
+version: '3.8'
+
+services:
+  nexus-agent:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - NEXT_TELEMETRY_DISABLED=1
+      # AI Provider Configuration (can be overridden)
+      - OPENAI_API_KEY=${OPENAI_API_KEY:-}
+      - AZURE_AI_ENDPOINT=${AZURE_AI_ENDPOINT:-}
+      - AZURE_AI_API_KEY=${AZURE_AI_API_KEY:-}
+      - OLLAMA_API_URL=${OLLAMA_API_URL:-http://host.docker.internal:11434}
+      - LM_STUDIO_API_URL=${LM_STUDIO_API_URL:-http://host.docker.internal:1234}
+    volumes:
+      # Mount for AI provider configurations
+      - ./config:/app/config
+    networks:
+      - nexus-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+
+  # Optional: Include Ollama service for local AI
+  # ollama:
+  #   image: ollama/ollama:latest
+  #   ports:
+  #     - "11434:11434"
+  #   volumes:
+  #     - ollama-data:/root/.ollama
+  #   networks:
+  #     - nexus-network
+  #   restart: unless-stopped
+
+networks:
+  nexus-network:
+    driver: bridge
+
+volumes:
+  ollama-data:
+    driver: local
