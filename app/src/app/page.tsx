@@ -63,19 +63,25 @@ export default function Home() {
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up">
             <Link
-              href="/demo"
+              href="/demo/showcase"
               className="px-8 py-4 rounded-xl btn-primary text-base font-semibold flex items-center gap-2 shadow-prism"
             >
-              <span>Launch Demo</span>
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-                <path fillRule="evenodd" d="M8 1a.5.5 0 01.5.5v11.793l3.146-3.147a.5.5 0 01.708.708l-4 4a.5.5 0 01-.708 0l-4-4a.5.5 0 01.708-.708L7.5 13.293V1.5A.5.5 0 018 1z" clipRule="evenodd" style={{transform: 'rotate(-90deg) translateX(2px) translateY(-8px)'}} />
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor">
+                <path d="M2.5 2v10L12 7z" />
               </svg>
+              <span>Watch Demo</span>
+            </Link>
+            <Link
+              href="/demo"
+              className="px-8 py-4 rounded-xl glass border border-white/10 text-white/80 hover:text-white hover:border-white/20 transition-all text-base font-medium"
+            >
+              Try It Live
             </Link>
             <a
               href="#architecture"
-              className="px-8 py-4 rounded-xl glass border border-white/10 text-white/80 hover:text-white hover:border-white/20 transition-all text-base font-medium"
+              className="px-8 py-4 rounded-xl glass border border-white/10 text-white/60 hover:text-white hover:border-white/20 transition-all text-base font-medium"
             >
-              View Architecture
+              Architecture
             </a>
           </div>
 
