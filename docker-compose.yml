@@ -2,26 +2,30 @@
 version: '3.8'
 
 services:
-  nexus-agent:
-    build: 
+  prism-ai:
+    build:
       context: .
       dockerfile: Dockerfile
+    container_name: prism-ai
     ports:
       - "3000:3000"
     environment:
       - NODE_ENV=production
       - NEXT_TELEMETRY_DISABLED=1
-      # AI Provider Configuration (can be overridden)
+      - NEXT_PUBLIC_DEMO_MODE=true
+      # AI Provider Configuration (all optional — demo mode works without any)
       - OPENAI_API_KEY=${OPENAI_API_KEY:-}
+      - OPENAI_MODEL=${OPENAI_MODEL:-gpt-4o-mini}
       - AZURE_AI_ENDPOINT=${AZURE_AI_ENDPOINT:-}
       - AZURE_AI_API_KEY=${AZURE_AI_API_KEY:-}
+      - AZURE_AI_DEPLOYMENT=${AZURE_AI_DEPLOYMENT:-}
       - OLLAMA_API_URL=${OLLAMA_API_URL:-http://host.docker.internal:11434}
+      - OLLAMA_MODEL=${OLLAMA_MODEL:-llama3}
       - LM_STUDIO_API_URL=${LM_STUDIO_API_URL:-http://host.docker.internal:1234}
     volumes:
-      # Mount for AI provider configurations
       - ./config:/app/config
     networks:
-      - nexus-network
+      - prism-network
     restart: unless-stopped
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:3000/api/health"]
@@ -29,8 +33,12 @@ services:
       timeout: 10s
       retries: 3
       start_period: 30s
+    labels:
+      - "app.name=prism-ai"
+      - "app.version=2.0.0"
+      - "app.description=Prism AI - Refracting Intelligence into Clarity"
 
-  # Optional: Include Ollama service for local AI
+  # Optional: Include Ollama for local AI (uncomment to enable)
   # ollama:
   #   image: ollama/ollama:latest
   #   ports:
@@ -38,11 +46,16 @@ services:
   #   volumes:
   #     - ollama-data:/root/.ollama
   #   networks:
-  #     - nexus-network
+  #     - prism-network
   #   restart: unless-stopped
+  #   healthcheck:
+  #     test: ["CMD", "curl", "-f", "http://localhost:11434/api/tags"]
+  #     interval: 30s
+  #     timeout: 10s
+  #     retries: 3
 
 networks:
-  nexus-network:
+  prism-network:
     driver: bridge
 
 volumes:
