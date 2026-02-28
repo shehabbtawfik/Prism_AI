@@ -39,6 +39,14 @@ export default function Navigation() {
           <NavLink href="/#features">Features</NavLink>
           <NavLink href="/#architecture">Architecture</NavLink>
           <NavLink href="/demo">Demo</NavLink>
+          <NavLink href="/demo/showcase">
+            <span className="flex items-center gap-1">
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor" className="text-violet-400">
+                <path d="M2 1.5v7L8.5 5z" />
+              </svg>
+              Showcase
+            </span>
+          </NavLink>
         </div>
 
         {/* Right side */}
@@ -76,6 +84,7 @@ export default function Navigation() {
           <MobileNavLink href="/#features" onClick={() => setMobileOpen(false)}>Features</MobileNavLink>
           <MobileNavLink href="/#architecture" onClick={() => setMobileOpen(false)}>Architecture</MobileNavLink>
           <MobileNavLink href="/demo" onClick={() => setMobileOpen(false)}>Demo</MobileNavLink>
+          <MobileNavLink href="/demo/showcase" onClick={() => setMobileOpen(false)}>▶ Showcase</MobileNavLink>
           <Link
             href="/demo"
             className="mt-2 px-4 py-2.5 rounded-lg btn-primary text-sm font-semibold text-center"
