@@ -1,4 +1,7 @@
 
+# Prism AI — Production Docker Build
+# Multi-stage build for minimal image size
+
 # Use Node.js 18 alpine for smaller size
 FROM node:18-alpine AS base
 
