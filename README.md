@@ -10,7 +10,7 @@
 [![Next.js](https://img.shields.io/badge/Next.js-14-black)](https://nextjs.org)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue)](https://typescriptlang.org)
 [![License](https://img.shields.io/badge/License-MIT-green)](./LICENSE)
-<video src="./prism_demo.mp4" autoplay loop muted playsinline width="100%"></video>
+[![Prism AI Demo — click to watch](./demo_preview.png)](https://github.com/shehabbtawfik/Prism_AI/raw/main/prism_demo.mp4)
 
 
 ---
