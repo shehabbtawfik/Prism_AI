@@ -1,0 +1,10 @@
+{
+  "rootDirectory": "app",
+  "framework": "nextjs",
+  "buildCommand": "yarn build",
+  "installCommand": "yarn install",
+  "env": {
+    "NEXT_PUBLIC_DEMO_MODE": "true",
+    "NEXT_TELEMETRY_DISABLED": "1"
+  }
+}
