@@ -10,6 +10,8 @@
 [![Next.js](https://img.shields.io/badge/Next.js-14-black)](https://nextjs.org)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue)](https://typescriptlang.org)
 [![License](https://img.shields.io/badge/License-MIT-green)](./LICENSE)
+![Prism AI Demo](./prism_demo.gif)
+
 
 ---
 
