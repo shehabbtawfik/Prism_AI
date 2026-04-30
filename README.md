@@ -5,7 +5,7 @@
 > AI content pipeline built on Next.js 14, TypeScript, and a provider abstraction layer
 > that treats LLMs as swappable infrastructure — not vendor dependencies.
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Now-7c3aed)](https://prism-ai-delta.vercel.app)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Now-7c3aed)](https://prism-ai-shehab.vercel.app)
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/shehabbtawfik/Prism_AI&root-directory=app&env=NEXT_PUBLIC_DEMO_MODE&envDescription=Set%20to%20true%20for%20demo%20mode%20without%20an%20API%20key&envLink=https://github.com/shehabbtawfik/Prism_AI%23configuration)
 [![Next.js](https://img.shields.io/badge/Next.js-14-black)](https://nextjs.org)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue)](https://typescriptlang.org)
