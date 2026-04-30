@@ -1,9 +1,13 @@
 
 # Prism AI — Refracting Intelligence into Clarity
 
-> **An AI systems architecture showcase.** Prism AI is a production-grade, multi-provider
-> AI content pipeline built on Next.js 14, TypeScript, and a provider abstraction layer
-> that treats LLMs as swappable infrastructure — not vendor dependencies.
+**Prism AI is a web app that turns a topic into a polished, publication-ready document in three steps: Research → Refine → Restyle.**
+
+Enter a subject, and Prism researches it with an AI, lets you refine the output with natural-language instructions, then reformats it into an executive report, blog post, technical doc, or plain Markdown — all streamed live in the browser, no waiting for a full response.
+
+It runs on any AI backend: OpenAI, Azure AI, a local Ollama model, or the built-in demo mode that needs no API key at all.
+
+> **Portfolio note:** The architecture is the point. Prism was built to demonstrate how to design AI systems so that LLM providers are swappable infrastructure — not hard-coded dependencies. The same code path runs in demo mode locally and against GPT-4o in production.
 
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Now-7c3aed)](https://prism-ai-shehab.vercel.app)
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/shehabbtawfik/Prism_AI&root-directory=app&env=NEXT_PUBLIC_DEMO_MODE&envDescription=Set%20to%20true%20for%20demo%20mode%20without%20an%20API%20key&envLink=https://github.com/shehabbtawfik/Prism_AI%23configuration)
